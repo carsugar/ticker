@@ -1,6 +1,7 @@
 const userController = require('../controllers/userController');
 const eventController = require('../controllers/eventController');
 const auctionController = require('../controllers/auctionController');
+const awsController = require('../controllers/awsController');
 const path = require('path');
 
 const routes = (app, express) => {
@@ -22,6 +23,9 @@ const routes = (app, express) => {
   app.get('/api/auction/fetch', auctionController.fetch );
   app.post('/api/auction/buyTickets', auctionController.buyTickets );
   app.get('/api/auction/fetchTickets', auctionController.fetchTickets );
+
+  /* AWS s3 Endpoints */
+  app.get('/aws/signedUrl', awsController.getSignedUrl );
 
   /* Other Endpoints */
   app.get('*', (req, res) => {
