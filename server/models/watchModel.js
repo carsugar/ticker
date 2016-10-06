@@ -7,7 +7,7 @@ const Watch = connection.define('watch', {
   },
   auctionId: {
     type: Sequelize.INTEGER
-  },
+  }
 });
 
 module.exports = Watch;
